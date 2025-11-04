@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\FactoryMethod">
+      <UniqueIdentifier>{7bbf0c82-2087-473d-ae68-6ce540c62463}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Observer">
+      <UniqueIdentifier>{66a2f134-4936-4ec1-949f-8741d615b7c9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\Main.cpp">
@@ -23,5 +29,25 @@
     <ClInclude Include="include\Prerequisites.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\Data\json.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Producto.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\FactoryMethod\FactoriaProductos.h">
+      <Filter>Header Files\FactoryMethod</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Inventario.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Observer\Observer.h">
+      <Filter>Header Files\Observer</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\data\productos.json">
+      <Filter>Header Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

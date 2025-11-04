@@ -166,7 +166,15 @@
     <ClCompile Include="source\Main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\Data\json.hpp" />
+    <ClInclude Include="include\FactoryMethod\FactoriaProductos.h" />
+    <ClInclude Include="include\Inventario.h" />
+    <ClInclude Include="include\Observer\Observer.h" />
     <ClInclude Include="include\Prerequisites.h" />
+    <ClInclude Include="include\Producto.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\data\productos.json" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
