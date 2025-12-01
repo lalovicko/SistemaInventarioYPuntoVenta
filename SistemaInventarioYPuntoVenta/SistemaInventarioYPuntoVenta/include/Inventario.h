@@ -8,19 +8,31 @@ using json = nlohmann::json;
 class Inventario
 {
 public:
+
+	void agregarObserver(Observer* observer) {
+		observers.push_back(observer);
+	}
+
+	// Notificar a todos los observers sobre un evento
+	void notificarObservers(const std::string& mensaje) {
+		for (auto* observer : observers) {
+			observer->actualizar(mensaje);
+		}
+	}
+
 	Inventario()  = default;
-	void CargarDesdeJson(const std::string& rutaArchivo) {
-		std::ifstream archivo(rutaArchivo);
-		if (!archivo.is_open()) {
+	void CargarDesdeJson(const std::string& rutaArchivo) { // Cargar inventario desde un archivo JSON
+		std::ifstream archivo(rutaArchivo); // Abrir el archivo JSON
+		if (!archivo.is_open()) { // Verificar si se abrió correctamente
 			std::cout << "No se pudo abrir el archivo: " << rutaArchivo << std::endl;
 			return;
 		}
 
-		json data;
-		archivo >> data;
+		json data; // Leer el contenido del archivo JSON
+		archivo >> data; 
+		productos.clear() ;
 
-		productos.clear();
-		for (const auto& item : data) {
+		for (const auto& item : data) { // Iterar sobre cada elemento del JSON y crear objetos Producto
 			Producto p(
 				item["nombre"].get<std::string>(),
 				item["precio"].get<double>(),
@@ -41,6 +53,7 @@ public:
 		}
 	}
 
+	// Vender un producto y actualizar el inventario
 	bool venderProducto(const std::string& codigo, int cantidad) {
 		for (auto& producto : productos) {
 			if (producto.getCodigo() == codigo) {
@@ -65,6 +78,7 @@ public:
 		return false;
 	}
 
+	// Comprar (reabastecer) un producto y actualizar el inventario
 	void comprarProducto(const std::string& codigo, int cantidad) {
 		for (auto& producto : productos) {
 			if (producto.getCodigo() == codigo) {
@@ -76,11 +90,13 @@ public:
 		std::cout << "Producto con codigo " << codigo << " no encontrado." << std::endl;
 	}
 
+	// Agregar un nuevo producto al inventario
 	void agregarProducto(Producto producto) {
 		productos.push_back(producto);
 		std::cout << "Producto agregado: " << producto.getNombre() << std::endl;
 	}
-
+	
+	// Guardar el inventario en archivo JSON
 	void guardarEnJson(const std::string& rutaArchivo) const {
 		json data = json::array();
 		for (const auto& producto : productos) {
@@ -101,15 +117,7 @@ public:
 		std::cout << "Inventario guardado en " << rutaArchivo << std::endl;
 	}
 
-	void agregarObserver(Observer* observer) {
-		observers.push_back(observer);
-	}	
 
-	void notificarObservers(const std::string& mensaje) {
-		for (auto* observer : observers) {
-			observer->actualizar(mensaje);
-		}
-	}
 
 private:
 	std::vector<Producto> productos;

@@ -13,6 +13,7 @@ private:
 class ObserverConcreto : public Observer
 {
 	public:
+		// Implementación del método actualizar
 	void actualizar(const std::string& mensaje) override
 	{
 		std::cout << "[notificacion]" << mensaje << std::endl;
