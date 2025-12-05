@@ -21,10 +21,20 @@ public:
 	}	
 
 	// Métodos getter
-	std::string getNombre() const { return nombre; }
-	int getPrecio() const { return precio; }
-	int getCantidad() const { return cantidad; }
-	std::string getCodigo() const { return codigo; }
+	std::string getNombre() const { 
+		return nombre; 
+	}
+	int getPrecio() const { 
+		return precio; 
+	}
+
+	int getCantidad() const { 
+		return cantidad; 
+	}
+
+	std::string getCodigo() const { 
+		return codigo; 
+	}
 
 	// Setter para actualizar cantidad
 	int setCantidad(int nuevaCantidad) {
@@ -33,8 +43,13 @@ public:
 	}
 
 	// Getter y Setter para stockMinimo
-	int getStockMinimo() const { return stockMinimo; }
-	void setStockMinimo(int minimo) { stockMinimo = minimo; }
+	int getStockMinimo() const { 
+		return stockMinimo; 
+	}
+
+	void setStockMinimo(int minimo) { 
+		stockMinimo = minimo; 
+	}
 
 
 };

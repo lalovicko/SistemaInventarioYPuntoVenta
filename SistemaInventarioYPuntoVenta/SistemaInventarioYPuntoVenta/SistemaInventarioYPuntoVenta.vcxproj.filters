@@ -19,6 +19,12 @@
     <Filter Include="Header Files\Observer">
       <UniqueIdentifier>{66a2f134-4936-4ec1-949f-8741d615b7c9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Strategy">
+      <UniqueIdentifier>{2108ef12-63c8-49bb-9d71-39e0259dcf47}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Facade">
+      <UniqueIdentifier>{23340eda-aef2-480e-a502-fc5e415a9776}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\Main.cpp">
@@ -43,6 +49,24 @@
     </ClInclude>
     <ClInclude Include="include\Observer\Observer.h">
       <Filter>Header Files\Observer</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Strategy\IPagosStrategy.h">
+      <Filter>Header Files\Strategy</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Strategy\PagoEfectivo.h">
+      <Filter>Header Files\Strategy</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Strategy\PagoTarjeta.h">
+      <Filter>Header Files\Strategy</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Ventas.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Facade\Gasolinera.h">
+      <Filter>Header Files\Facade</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Facade\GasolineraFacade.h">
+      <Filter>Header Files\Facade</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

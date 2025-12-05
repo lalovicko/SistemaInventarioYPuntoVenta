@@ -5,8 +5,8 @@
 #include "Observer/Observer.h"
 using json = nlohmann::json;
 
-class Inventario
-{
+class 
+	Inventario{
 public:
 
 	void agregarObserver(Observer* observer) {
@@ -21,6 +21,7 @@ public:
 	}
 
 	Inventario()  = default;
+	
 	void CargarDesdeJson(const std::string& rutaArchivo) { // Cargar inventario desde un archivo JSON
 		std::ifstream archivo(rutaArchivo); // Abrir el archivo JSON
 		if (!archivo.is_open()) { // Verificar si se abrió correctamente
@@ -52,6 +53,7 @@ public:
 			producto.mostrarInfo();
 		}
 	}
+
 
 	// Vender un producto y actualizar el inventario
 	bool venderProducto(const std::string& codigo, int cantidad) {
@@ -115,6 +117,13 @@ public:
 		archivo << data.dump(4);
 		archivo.close();
 		std::cout << "Inventario guardado en " << rutaArchivo << std::endl;
+	}
+
+	Producto* buscarProducto(const std::string& codigo) {
+		for (auto& p : productos) {
+			if (p.getCodigo() == codigo) return &p;
+		}
+		return nullptr;
 	}
 
 

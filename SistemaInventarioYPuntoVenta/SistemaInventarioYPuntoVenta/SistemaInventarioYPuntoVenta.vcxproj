@@ -167,11 +167,17 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Data\json.hpp" />
+    <ClInclude Include="include\Facade\Gasolinera.h" />
+    <ClInclude Include="include\Facade\GasolineraFacade.h" />
     <ClInclude Include="include\FactoryMethod\FactoriaProductos.h" />
     <ClInclude Include="include\Inventario.h" />
     <ClInclude Include="include\Observer\Observer.h" />
     <ClInclude Include="include\Prerequisites.h" />
     <ClInclude Include="include\Producto.h" />
+    <ClInclude Include="include\Strategy\IPagosStrategy.h" />
+    <ClInclude Include="include\Strategy\PagoEfectivo.h" />
+    <ClInclude Include="include\Strategy\PagoTarjeta.h" />
+    <ClInclude Include="include\Ventas.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\data\productos.json" />
